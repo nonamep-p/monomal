@@ -1,0 +1,60 @@
+/* Monomal GTK 4 Theme - Sharp & Monochrome */
+
+@define-color accent_color #ffffff;
+@define-color accent_bg_color #ffffff;
+@define-color accent_fg_color #000000;
+
+@define-color window_bg_color #000000;
+@define-color window_fg_color #ffffff;
+
+@define-color view_bg_color #000000;
+@define-color view_fg_color #ffffff;
+
+@define-color headerbar_bg_color #000000;
+@define-color headerbar_fg_color #ffffff;
+@define-color headerbar_border_color #ffffff;
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color headerbar_shade_color rgba(0, 0, 0, 0.07);
+
+@define-color card_bg_color #111111;
+@define-color card_fg_color #ffffff;
+@define-color card_shade_color rgba(0, 0, 0, 0.07);
+
+@define-color popover_bg_color #111111;
+@define-color popover_fg_color #ffffff;
+
+@define-color shade_color rgba(0, 0, 0, 0.07);
+@define-color scrollbar_outline_color #ffffff;
+
+/* Reset Radius for Sharp Look */
+window, dialog, .background, .titlebar, headerbar, button, entry, .card {
+    border-radius: 0px;
+}
+
+/* Nautilus Specifics */
+.navigation-sidebar {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.navigation-sidebar :selected {
+    background-color: #222222;
+    color: #ffffff;
+    border-left: 2px solid #ffffff;
+}
+
+/* Borders */
+window {
+    border: 1px solid #333333;
+}
+
+/* Inputs */
+entry {
+    background-color: #111111;
+    border: 1px solid #333333;
+    color: #ffffff;
+}
+
+entry:focus {
+    border-color: #ffffff;
+}

@@ -1,0 +1,91 @@
+/**
+* @name Gruvbox Material (Solid)
+* @author shub39 (adapted)
+* @version 2.1.0
+* @description Solid Gruvbox Material theme for Discord/Vesktop. No blur, minimal rounding.
+*/
+
+@import url("https://refact0r.github.io/midnight-discord/midnight.css");
+
+:root {
+	/* Gruvbox Material Palette */
+	--bg-0: #282828; 
+	--bg-1: #32302f;
+	--bg-2: #32302f;
+	--bg-3: #504945;
+    --bg-4: #282828;
+
+	--fg-0: #ebdbb2;
+	--fg-1: #d5c4a1;
+	--fg-2: #bdae93;
+
+	--accent-1: #d3869b; /* Purple */
+	--accent-2: #89b482; /* Green */
+	--accent-3: #ea6962; /* Red */
+	--accent-4: #d8a657; /* Yellow */
+	--accent-5: #7daea3; /* Blue */
+    
+    /* Midnight Variables Override - SOLID COLORS */
+    --main-theme-color: var(--accent-1);
+    --theme-transparency: rgba(40, 40, 40, 1) !important; /* Solid background */
+    --hover-transparency: rgba(60, 60, 60, 1) !important;
+
+    --font-primary: "JetBrainsMono Nerd Font";
+    --font-display: "JetBrainsMono Nerd Font";
+    
+    /* Soften the edges slightly (4px) instead of harsh 0px */
+    --radius-primary: 4px !important;
+    --radius-secondary: 4px !important;
+    --radius-context: 4px !important;
+    --radius-modal: 4px !important;
+    --radius-tooltip: 4px !important;
+    
+    --spacing: 8px;
+}
+
+/* Background Overrides - Enforce Solid Gruvbox */
+.theme-dark, .theme-light {
+    --background-primary: var(--bg-0);
+    --background-secondary: var(--bg-1);
+    --background-secondary-alt: var(--bg-2);
+    --background-tertiary: var(--bg-0);
+    --background-accent: var(--bg-3);
+    --background-floating: var(--bg-1);
+    
+    --header-primary: var(--fg-0);
+    --header-secondary: var(--fg-1);
+    --text-normal: var(--fg-0);
+    --text-muted: var(--fg-2);
+    
+    --interactive-normal: var(--fg-2);
+    --interactive-hover: var(--fg-0);
+    --interactive-active: var(--fg-0);
+}
+
+/* Fix Chat Bubbles */
+.message-2CShn3 {
+    background-color: transparent !important;
+}
+
+/* Sidebar & Server List - Solid */
+nav[aria-label="Servers sidebar"] {
+    background-color: var(--bg-0) !important;
+}
+.sidebar-1tnWFu {
+    background-color: var(--bg-1) !important;
+}
+
+/* User Panel */
+section[aria-label="User area"] {
+    background-color: var(--bg-2) !important;
+}
+
+/* Search Bar */
+.searchBar-jG8ZlG {
+    background-color: var(--bg-3) !important;
+}
+
+/* Channel List */
+.container-1NXEtd {
+    background-color: var(--bg-1) !important;
+}

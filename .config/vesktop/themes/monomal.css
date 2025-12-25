@@ -1,0 +1,81 @@
+/**
+ * @name Monomal Refined
+ * @author Gemini
+ * @description A high-contrast, sharpened monochrome theme matching the SwayNC aesthetic.
+ * @version 1.1.0
+ */
+
+:root {
+  /* SwayNC Palette */
+  --base: #000000;
+  --surface: #111111;
+  --surface-light: #222222;
+  --border: #333333;
+  --accent: #ffffff;
+  
+  --background-primary: var(--base);
+  --background-secondary: var(--surface);
+  --background-secondary-alt: var(--surface);
+  --background-tertiary: var(--base);
+  --background-accent: var(--surface-light);
+  --background-floating: var(--surface);
+  
+  --header-primary: var(--accent);
+  --header-secondary: #aaaaaa;
+  --text-normal: var(--accent);
+  --text-muted: #888888;
+  
+  --interactive-normal: #aaaaaa;
+  --interactive-hover: var(--accent);
+  --interactive-active: var(--accent);
+  
+  /* Hard Reset to Square */
+  --radius-sm: 0px !important;
+  --radius-md: 0px !important;
+  --radius-lg: 0px !important;
+  --radius-xl: 0px !important;
+}
+
+/* --- Global Sharpening --- */
+* {
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    font-family: "JetBrainsMono Nerd Font", monospace !important;
+}
+
+/* --- Container Borders (The SwayNC Look) --- */
+.container_e40c16, /* Server List */
+.sidebar_a4d651,   /* Channel List */
+.chat_a7d72e,      /* Chat Area */
+.container_b2ca13, /* Member List */
+.scrollableContainer_d0696d /* Message Box */ {
+    border: 1px solid var(--border) !important;
+    background-color: var(--base) !important;
+}
+
+/* --- Hover Highlights --- */
+.interactive_f8d2d8:hover, 
+.member_a1a09d:hover, 
+.channel_c91abc:hover {
+    background-color: var(--surface-light) !important;
+    border: 1px solid var(--accent) !important;
+}
+
+/* --- Message Box --- */
+.inner_a99829 {
+    background-color: var(--surface) !important;
+}
+
+/* --- Scrollbars --- */
+::-webkit-scrollbar {
+    width: 4px !important;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border) !important;
+}
+
+/* --- Avatars (Sharpened) --- */
+.avatar_f9f2ca, .mask_d5067d {
+    mask: none !important;
+    border-radius: 0px !important;
+}

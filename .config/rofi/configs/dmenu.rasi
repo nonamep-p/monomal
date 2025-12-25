@@ -1,0 +1,87 @@
+/* Gruvbox Material Rofi (shub39 style - dmenu override) */
+@import "~/.config/rofi/colors.rasi"
+
+configuration {
+    modi: "drun,run,filebrowser,window";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+}
+
+window {
+    location: center;
+    anchor: center;
+    width: 600px;
+    height: 400px;
+    border: 2px;
+    border-radius: 0px;
+    border-color: @border-color;
+    background-color: @background-color;
+    padding: 0px;
+}
+
+mainbox {
+    spacing: 0px;
+    padding: 10px;
+    children: [ inputbar, listview ];
+    background-color: transparent;
+}
+
+inputbar {
+    spacing: 10px;
+    padding: 5px;
+    margin: 0px 0px 10px 0px;
+    border: 2px;
+    border-radius: 0px;
+    border-color: @border-color;
+    background-color: transparent;
+    text-color: @text-color;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    padding: 5px 10px;
+    background-color: @selected;
+    text-color: @background-color;
+    border-radius: 0px;
+    margin: 5px;
+}
+
+entry {
+    padding: 10px;
+    background-color: transparent;
+    text-color: @text-color;
+    placeholder: "Search...";
+}
+
+listview {
+    columns: 1;
+    lines: 6;
+    fixed-height: false;
+    spacing: 5px;
+    background-color: transparent;
+    border: 0px;
+}
+
+element {
+    padding: 8px 10px;
+    border-radius: 0px;
+    background-color: transparent;
+    text-color: @text-color;
+}
+
+element selected.normal {
+    background-color: @selected;
+    text-color: @background-color;
+    border: 0px;
+}
+
+element-text, element-icon {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+element-icon {
+    size: 24px;
+    margin: 0 10px 0 0;
+}

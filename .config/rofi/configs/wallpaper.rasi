@@ -1,0 +1,93 @@
+/**
+ * Monomal "Dense Landscape Gallery" Wallpaper Picker
+ */
+
+@import "~/.config/rofi/colors.rasi"
+
+configuration {
+    show-icons:                 true;
+    icon-theme:                 "Papirus";
+}
+
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       1100px; /* Adjusted for 3 columns of landscape */
+    height:                      650px;
+    
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      1px;
+    border-color:                @border-color;
+    background-color:            @background;
+    cursor:                      "default";
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     10px; /* Minimal outer padding */
+    background-color:            transparent;
+    children:                    [ "listview" ];
+}
+
+listview {
+    enabled:                     true;
+    columns:                     3;
+    lines:                       2;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     10px; /* Minimal gap between images */
+    margin:                      0px;
+    padding:                     0px;
+    background-color:            transparent;
+    cursor:                      "default";
+}
+
+element {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     2px; /* Tight fit */
+    border:                      1px;
+    border-color:                transparent;
+    background-color:            transparent;
+    orientation:                 vertical;
+    cursor:                      "pointer";
+}
+
+element selected.normal {
+    background-color:            @background;
+    border-color:                @selected; /* Subtle thin white outline */
+}
+
+element-icon {
+    background-color:            transparent;
+    size:                        340px; /* Spans the width for landscape ratio */
+    cursor:                      inherit;
+    horizontal-align:            0.5;
+}
+
+element-text {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  transparent;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    font:                        "JetBrainsMono Nerd Font 10";
+    margin:                      -20px 0px 0px 0px; /* Pull text up into the image area slightly */
+}
+
+element selected.normal element-text {
+    text-color:                  @foreground;
+}

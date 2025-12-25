@@ -1,0 +1,49 @@
+/* Monomal GTK 3 Theme */
+
+@define-color theme_fg_color #ffffff;
+@define-color theme_bg_color #000000;
+@define-color theme_text_color #ffffff;
+@define-color theme_base_color #000000;
+@define-color theme_selected_bg_color #ffffff;
+@define-color theme_selected_fg_color #000000;
+
+@define-color insensitive_bg_color #111111;
+@define-color insensitive_fg_color #555555;
+
+@define-color borders #333333;
+
+/* Reset Radius */
+* {
+    border-radius: 0px;
+}
+
+window.background {
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
+}
+
+headerbar {
+    background-color: @theme_bg_color;
+    border-bottom: 1px solid @borders;
+}
+
+button {
+    background-color: #111111;
+    color: #ffffff;
+    border: 1px solid @borders;
+}
+
+button:hover {
+    background-color: #222222;
+    border-color: #ffffff;
+}
+
+entry {
+    background-color: #111111;
+    border: 1px solid @borders;
+    color: #ffffff;
+}
+
+entry:focus {
+    border-color: #ffffff;
+}

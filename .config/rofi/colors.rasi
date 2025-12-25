@@ -1,0 +1,17 @@
+/* Rofi Colors - Dark Monochrome Shades */
+
+* {
+    background-color:            #000000;
+    text-color:                  #ffffff;
+    border-color:                #333333;
+    
+    /* Palette */
+    primary:                     #ffffff;
+    secondary:                   #555555;
+    status:                      #999999;
+    urgent:                      #ffffff;
+    
+    selected:                    #ffffff;
+    active:                      #999999;
+    urgent-color:                #ffffff;
+}

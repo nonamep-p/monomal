@@ -1,0 +1,133 @@
+/* 
+ * Monomal "SwayNC Match" - Spotify Theme 
+ * Matches the ~/.config/swaync/style.css aesthetic perfectly.
+ */
+
+/* --- Core Variables (Matched to SwayNC) --- */
+:root {
+    --base: #000000;
+    --surface: #111111;
+    --surface-light: #222222;
+    --border: #333333;
+    --accent: #ffffff;
+    --text: #ffffff;
+    --text-dim: #999999;
+}
+
+/* --- Fonts & Reset --- */
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace !important;
+    font-weight: 500 !important;
+    letter-spacing: 0px !important; /* Reset spacing */
+    border-radius: 0px !important; /* Strict sharp corners */
+    box-shadow: none !important;
+}
+
+/* --- Main Containers --- */
+.main-rootLIST-wrapper, 
+.Root__main-view, 
+.Root__nav-bar, 
+.Root__now-playing-bar {
+    background-color: var(--base) !important;
+}
+
+/* Remove gradients */
+.main-home-homeHeader,
+.main-actionBarBackground-background {
+    background-image: none !important;
+    background-color: var(--base) !important;
+}
+
+/* --- Cards (Albums, Playlists) --- */
+/* Match SwayNC .widget-mpris style */
+.main-card-card {
+    background-color: var(--surface) !important;
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+    padding: 12px !important;
+}
+
+.main-card-card:hover {
+    background-color: var(--surface-light) !important;
+    border-color: var(--accent);
+}
+
+/* --- List Rows (Tracks) --- */
+.main-trackList-trackListRow {
+    border: 1px solid transparent; /* Reserve space */
+    border-bottom: 1px solid var(--surface);
+    background-color: transparent !important;
+    transition: all 0.1s ease;
+}
+
+.main-trackList-trackListRow:hover {
+    background-color: var(--surface) !important;
+    border: 1px solid var(--border);
+}
+
+.main-trackList-active {
+    background-color: var(--surface-light) !important;
+    border: 1px solid var(--accent);
+}
+
+/* --- Sidebar --- */
+.main-navBar-entry {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: var(--text-dim);
+}
+
+.main-navBar-navBarLinkActive {
+    background-color: var(--surface) !important;
+    border: 1px solid var(--border);
+    color: var(--text) !important;
+}
+
+/* --- Buttons --- */
+/* Match SwayNC .widget-buttons-grid style */
+.main-playButton-PlayButton,
+.main-buttons-button {
+    background-color: var(--surface) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    transform: none !important; /* Stop scaling effects */
+}
+
+.main-playButton-PlayButton:hover,
+.main-buttons-button:hover {
+    background-color: var(--surface-light) !important;
+    border-color: var(--accent) !important;
+}
+
+/* --- Images --- */
+.main-image-image {
+    border: none; /* Let the card border handle it */
+}
+
+/* --- Progress Bar --- */
+/* Match SwayNC slider style */
+.x-progressBar-progressBarBg {
+    background-color: var(--surface-light) !important;
+    border: 1px solid var(--border);
+    height: 8px !important;
+}
+
+.x-progressBar-fillColor {
+    background-color: var(--accent) !important;
+}
+
+.progress-bar__slider {
+    background-color: var(--base);
+    border: 2px solid var(--accent);
+    height: 16px;
+    width: 16px;
+}
+
+/* --- Headers --- */
+.main-entityHeader-container {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+}
+
+/* Hide clutter */
+.main-topBar-background { display: none !important; }

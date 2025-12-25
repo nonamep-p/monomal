@@ -1,0 +1,22 @@
+# User specific overrides
+.config/hypr/user_settings.conf
+.config/waybar/user_settings.jsonc
+
+# System specific
+.DS_Store
+Thumbs.db
+.config/vesktop/sessionData/
+.config/vesktop/ExtensionCache/
+.config/vesktop/Crashpad/
+.config/spicetify/CustomApps/marketplace-dist.zip
+*.log
+*.db-shm
+*.db-wal
+.config/atuin/*.db*
+.config/copyq/*.dat
+.config/copyq/*.lock
+.config/vesktop/sessionData/
+.config/vesktop/ExtensionCache/
+.config/vesktop/Crashpad/
+.config/vesktop/settings.json
+.config/vesktop/state.json

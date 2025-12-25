@@ -1,0 +1,155 @@
+/* Dark Monochrome Shades - Multi-tone Grayscale */
+
+@define-color base #000000;
+@define-color surface #111111;
+@define-color surface_light #222222;
+@define-color border #333333;
+@define-color text #ffffff;
+
+/* Palette - Shades of White/Gray */
+@define-color primary #ffffff;   /* Pure White for actions */
+@define-color secondary #666666; /* Mid Gray for secondary */
+@define-color status #aaaaaa;    /* Light Gray for status */
+@define-color urgent #ffffff;    /* Bold White for urgent */
+
+* {
+  font-family: "JetBrainsMono Nerd Font", "JetBrainsMono";
+  font-weight: bold;
+  font-size: 11px;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s ease-out;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+window#waybar {
+  background-color: @base;
+  color: @text;
+}
+
+/* ================== SHARED MODULE STYLE ================== */
+#taskbar,
+#tray,
+#custom-clipboard,
+#custom-power,
+#custom-menu,
+#custom-notifications,
+#custom-sep {
+  background-color: transparent;
+  color: @text;
+  padding: 0 8px;
+  margin: 0;
+}
+
+/* ================== BOXED MODULES ================== */
+#workspaces,
+#custom-weather,
+#clock,
+#custom-clock,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#battery,
+#pulseaudio {
+  background-color: @surface;
+  border: 1px solid @border;
+  border-radius: 3px;
+  margin: 2px 4px;
+  padding: 0 8px;
+}
+
+/* ================== WIDE MODULES ================== */
+#workspaces,
+#clock,
+#custom-clock {
+  min-width: 0;
+}
+
+/* ================== COMPACT HARDWARE MODULES ================== */
+#cpu,
+#memory,
+#disk,
+#temperature,
+#battery {
+  min-width: 0; /* Allow auto-sizing */
+}
+
+/* ================== STATES (Warning/Critical) ================== */
+#cpu.warning, #memory.warning, #disk.warning, #battery.warning {
+    color: @status;
+}
+
+#cpu.critical, #memory.critical, #disk.critical, #battery.critical, #temperature.critical {
+    color: @urgent;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    to { color: @base; background-color: @urgent; }
+}
+
+/* ================== AUDIO (Pulseaudio) ================== */
+#pulseaudio.muted {
+    color: @base;
+    background-color: @status;
+}
+
+/* ================== WORKSPACES ================== */
+#workspaces button {
+  padding: 0 8px;
+  color: #444444; 
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+#workspaces button.active {
+  color: @primary;
+  background-color: transparent;
+}
+
+#workspaces button:hover {
+  color: @primary;
+  background-color: @surface_light;
+}
+
+#workspaces button.urgent {
+  color: @urgent;
+}
+
+/* ================== TASKBAR ================== */
+#taskbar button {
+  padding: 0 6px;
+  margin: 0 2px;
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+#taskbar button.active {
+  background-color: transparent;
+  color: @primary;
+}
+
+#taskbar button:hover {
+  background-color: transparent;
+  color: @status;
+}
+
+/* ================== SPECIAL MODULES ================== */
+#custom-menu { color: @secondary; }
+#custom-notifications { color: @text; }
+#custom-notifications.notification { color: @primary; }
+#custom-notifications.dnd-notification { background-color: @primary; color: @base; }
+
+/* ================== TOOLTIP ================== */
+tooltip {
+  background-color: @base;
+  border: 1px solid @primary;
+  border-radius: 3px;
+}
+tooltip label { padding: 8px; color: @text; }

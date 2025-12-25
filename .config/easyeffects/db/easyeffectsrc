@@ -1,0 +1,11 @@
+[StreamInputs]
+inputDevice=mic_ec
+
+[StreamOutputs]
+outputDevice=alsa_output.usb-Generic_AB13X_USB_Audio_20210926172016-00.analog-stereo
+showBlocklistedApps=true
+
+[Window]
+height=1248
+visiblePipeWirePage=testSignalsPage
+width=955

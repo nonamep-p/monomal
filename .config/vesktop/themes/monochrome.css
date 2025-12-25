@@ -1,0 +1,36 @@
+/**
+ * @name Monomal
+ * @description Monochrome High Contrast Theme
+ * @author Saifullah Balghari
+ * @version 1.0.0
+ */
+
+:root {
+    --background-primary: #000000 !important;
+    --background-secondary: #111111 !important;
+    --background-tertiary: #111111 !important;
+    --channeltextarea-background: #222222 !important;
+    --background-secondary-alt: #000000 !important;
+    --text-normal: #ffffff !important;
+    --text-muted: #888888 !important;
+    --interactive-normal: #aaaaaa !important;
+    --interactive-hover: #ffffff !important;
+    --interactive-active: #ffffff !important;
+    --header-primary: #ffffff !important;
+    --brand-experiment: #555555 !important; /* Muted accent */
+}
+
+/* Remove Roundness */
+* {
+    border-radius: 0px !important;
+}
+
+/* Darker Sidebar */
+nav[class*="guilds"] {
+    background-color: #000000 !important;
+}
+
+/* Chat Area */
+div[class*="chat"] {
+    background-color: #111111 !important;
+}
