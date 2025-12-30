@@ -3,7 +3,7 @@
 # ⬛ M O N O M A L &nbsp; 2 . 0
 ### *The Definitive Monochrome Workspace*
 
-[![Version](https://img.shields.io/badge/Version-2.0.0-white?style=for-the-badge&labelColor=111111)](https://github.com/nonamep-p/monomal)
+[![Version](https://img.shields.io/badge/Version-2.1.0-white?style=for-the-badge&labelColor=111111)](https://github.com/nonamep-p/monomal)
 [![License](https://img.shields.io/github/license/nonamep-p/monomal?style=for-the-badge&color=white&labelColor=111111)](LICENSE)
 [![Arch](https://img.shields.io/badge/Arch_Linux-white?style=for-the-badge&logo=archlinux&logoColor=black&labelColor=111111)](https://archlinux.org)
 
@@ -11,58 +11,87 @@
 <br/>
 *Every pixel is sharpened. Every corner is square. Zero distractions.*
 
-[ 🚀 Quick Start ](#-quick-start) • [ 🎨 Component Gallery ](#-component-gallery) • [ ⌨️ Shortcuts ](#-shortcuts)
+[ 🚀 Quick Start ](#-quick-start) • [ ⚡ Performance ](#-performance-engineering) • [ ⌨️ Keybindings ](#%EF%B8%8F-keybindings) • [ 🛠️ Features ](#%EF%B8%8F-features)
 
 ---
 </div>
 
-## 🛠️ Interactive Features
-<details open>
-<summary><b>📦 Guided Installation</b></summary>
-The new <code>install.sh</code> is interactive and safe. It automatically detects your environment, offers a package checklist, and handles backups of your existing configs.
-</details>
+## ⚡ Performance Engineering
+Monomal is not just a theme; it is a **hardware-tuned OS configuration** designed for low-power devices (Dual-Core, 8GB RAM).
 
-<details>
-<summary><b>🖼️ Landscape Wallpaper Engine</b></summary>
-A custom Rofi-based gallery (<code>Super+Shift+W</code>) that generates 3:2 landscape thumbnails to match your screen perfectly. Zero-gap design with name-on-hover reveals.
-</details>
+*   **Anti-Freeze Memory:** Uses 150% ZRAM (12GB) with `zstd` compression to prevent system lockups.
+*   **Zero-Lag Priority:** A background daemon (`window_priority.sh`) automatically boosts the CPU priority of your active window, ensuring typing never lags.
+*   **App Profiles:** Includes custom "Nuclear" browser profiles for heavy web apps (WhatsApp, Discord) that reduce RAM usage by ~50%.
+*   **Input Latency:** Optimized Hyprland configs with VFR (Variable Frame Rate) and direct-scanout for gaming.
 
-<details>
-<summary><b>📋 Popup Clipboard (CopyQ)</b></summary>
-A sleek, square dropdown panel (<code>Super+V</code>) appearing directly under your tray. Fully themed with monospace fonts and high-contrast selection.
-</details>
+👉 **[Read the full Performance Guide (PERFORMANCE.md)](PERFORMANCE.md)**
 
-## ✨ System Roadmap
-- [x] **Monomal 2.0 Core:** Sharpened borders and 0px radius globally.
-- [x] **Unified Audio:** Hardware-direct routing with WebRTC optimization.
-- [x] **Themed Essentials:** Monochrome GTK, Btop, and Micro.
-- [x] **Deep App Injection:** Custom CSS for Discord, Spotify, and Zen.
-- [ ] **Dynamic Color Profiles:** Switch between "Pitch Black" and "Mid Gray" on the fly.
+## 🛠️ Features
 
-## 🎨 Component Gallery
-| Component | Philosophy | Integration |
-| :--- | :--- | :--- |
-| **Hyprland** | High-speed, tiled focus. | 1px White Borders |
-| **Spotify** | Terminal-style TUI look. | Spicetify + Custom CSS |
-| **Discord** | Sharpened & Integrated. | Vesktop + Monomal.css |
-| **Nautilus** | Clean, bordered files. | GTK 4.0 Stylesheet |
-| **Waybar** | Top-right tray focus. | Minimal Icons |
+### 📦 Interactive Tools
+*   **Ultimate Screen Recorder (`Super+Shift+R`):** A robust Rofi-based recorder with menus for Audio Source, Area Selection, Quality Settings, and Post-Recording actions (Rename/Delete). Hardware accelerated (`vaapi`).
+*   **Wallpaper Gallery (`Super+Shift+W`):** A fast Rofi grid for browsing and applying wallpapers instantly.
+*   **Clipboard Manager (`Super+V`):** A 400x500 popup running CopyQ, styled to match the system.
+
+### 🎨 Visual Identity
+*   **Radius:** Strictly `0px` globally.
+*   **Palette:** `#000000` (Base), `#111111` (Surface), `#FFFFFF` (Text).
+*   **OLED Simulation:** A custom shader (`oled-sim.glsl`) that boosts contrast and saturation to mimic OLED depth on LCD screens.
+
+### 🔊 Audio Stack
+*   **Noise Cancellation:** Pre-configured PipeWire filter chain for crystal clear mic input.
+*   **Echo Cancellation:** WebRTC-grade echo removal active by default.
 
 ## 🚀 Quick Start
+
+### Prerequisites
+*   **OS:** Arch Linux (CachyOS Recommended)
+*   **WM:** Hyprland
+*   **Shell:** Fish / Bash
+
+### Installation
 ```bash
 git clone https://github.com/nonamep-p/monomal.git
 cd monomal
 ./install.sh
 ```
+*The installer handles backups, package installation, and dotfile linking automatically.*
 
-## ⌨️ Shortcuts
+## ⌨️ Keybindings
+
+### 🪟 Window Management
+| Key | Action |
+| :--- | :--- |
+| `Super + Q` | Close Window |
+| `Super + F` | Fullscreen |
+| `Super + P` | Pseudo-Tiling |
+| `Super + S` | Toggle Split |
+| `Super + Arrows` | Move Focus |
+
+### 🚀 Launchers
 | Key | Action |
 | :--- | :--- |
 | `Super + Enter` | **Ghostty** (Terminal) |
-| `Super + V` | **CopyQ** (Clipboard Popup) |
-| `Super + Shift + W` | **Wallpaper Gallery** |
-| `Super + Alt + V` | **Volume HUD** |
-| `Super + Q` | **Kill Window** |
+| `Super + Space` | **App Launcher** (Rofi) |
+| `Super + E` | **Nautilus** (Files) |
+| `Super + Shift + E` | **Emoji Picker** |
+
+### 🛠️ Utilities
+| Key | Action |
+| :--- | :--- |
+| `Super + V` | **Clipboard** (CopyQ) |
+| `Super + Shift + R` | **Screen Recorder** (Menu) |
+| `Super + Shift + W` | **Wallpaper Picker** |
+| `Super + Shift + L` | **Reload Hyprland** |
+| `Super + Alt + V` | **Volume Mixer** |
+
+## 📦 Curated App Suite
+Monomal is designed around these specific tools:
+*   **Browser:** Zen Browser (Firefox fork)
+*   **Terminal:** Ghostty
+*   **Music:** Spotify (Native/AUR) or `spotify-player` (TUI)
+*   **Chat:** Vesktop (Discord) & Zen Web Apps
+*   **Editor:** Micro / VS Code
 
 ---
 <div align="center">
