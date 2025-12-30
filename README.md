@@ -32,6 +32,7 @@ Monomal is not just a theme; it is a **hardware-tuned OS configuration** designe
 *   **Ultimate Screen Recorder (`Super+Shift+R`):** A robust Rofi-based recorder with menus for Audio Source, Area Selection, Quality Settings, and Post-Recording actions (Rename/Delete). Hardware accelerated (`vaapi`).
 *   **Wallpaper Gallery (`Super+Shift+W`):** A fast Rofi grid for browsing and applying wallpapers instantly.
 *   **Clipboard Manager (`Super+V`):** A 400x500 popup running CopyQ, styled to match the system.
+*   **Neofetch Theme Picker:** A terminal TUI (`nf-theme-picker`) to browse, preview, and apply 20+ fetch themes instantly.
 
 ### 🎨 Visual Identity
 *   **Radius:** Strictly `0px` globally.
@@ -84,6 +85,7 @@ cd monomal
 | `Super + Shift + W` | **Wallpaper Picker** |
 | `Super + Shift + L` | **Reload Hyprland** |
 | `Super + Alt + V` | **Volume Mixer** |
+| `CLI Command` | `nf-theme-picker` (Fetch Themes) |
 
 ## 📦 Curated App Suite
 Monomal is designed around these specific tools:
