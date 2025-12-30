@@ -9,20 +9,35 @@ if [ ! -d "$THEME_DIR" ]; then
     exit 1
 fi
 
+# Find all files containing print_info() - this is the best way to identify neofetch configs
+# We exclude .git and images
+echo "Indexing themes... please wait."
+THEMES=$(grep -rl "print_info()" "$THEME_DIR" --exclude-dir=".git" --exclude="*.png" --exclude="*.jpg" --exclude="*.md")
+
+if [ -z "$THEMES" ]; then
+    echo "No themes found in $THEME_DIR"
+    exit 1
+fi
+
 # Select with fzf and preview
-SELECTED=$(find "$THEME_DIR" -name "*.conf" | fzf \
-    --prompt="Select Theme > " \
+# We strip the full path to show a nice relative name in fzf
+SELECTED=$(echo "$THEMES" | sed "s|$THEME_DIR/||" | fzf \
+    --prompt="Select Neofetch Theme > " \
     --height=100% \
     --layout=reverse \
     --border \
-    --preview "neofetch --config {}" \
-    --preview-window=right:70% \
-    --delimiter / \
-    --with-nth -1)
+    --preview "neofetch --config $THEME_DIR/{}" \
+    --preview-window=right:70%)
 
 if [ -n "$SELECTED" ]; then
+    FULL_PATH="$THEME_DIR/$SELECTED"
     echo "Applying: $SELECTED"
-    cp "$SELECTED" "$CONFIG_FILE"
+    
+    # Backup current
+    cp "$CONFIG_FILE" "${CONFIG_FILE}.bak" 2>/dev/null
+    
+    # Copy new
+    cp "$FULL_PATH" "$CONFIG_FILE"
     
     # Verify copy
     if [ $? -eq 0 ]; then
