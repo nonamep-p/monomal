@@ -10,9 +10,6 @@ if [ ! -d "$THEME_DIR" ]; then
 fi
 
 # Select with fzf and preview
-# We search recursively for .conf files
-# --preview runs neofetch with that config
-# --preview-window=right:70% gives plenty of space for the art
 SELECTED=$(find "$THEME_DIR" -name "*.conf" | fzf \
     --prompt="Select Theme > " \
     --height=100% \
@@ -24,10 +21,17 @@ SELECTED=$(find "$THEME_DIR" -name "*.conf" | fzf \
     --with-nth -1)
 
 if [ -n "$SELECTED" ]; then
+    echo "Applying: $SELECTED"
     cp "$SELECTED" "$CONFIG_FILE"
-    clear
-    neofetch
-    echo -e "\n\033[1;32mTheme applied: $(basename "$SELECTED")\033[0m"
+    
+    # Verify copy
+    if [ $? -eq 0 ]; then
+        echo -e "\n\033[1;32m✔ Theme applied successfully!\033[0m"
+        echo "Running preview..."
+        neofetch
+    else
+        echo -e "\n\033[1;31m✖ Failed to apply theme.\033[0m"
+    fi
 else
     echo "No theme selected."
 fi
